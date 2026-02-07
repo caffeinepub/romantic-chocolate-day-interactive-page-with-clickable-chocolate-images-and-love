@@ -1,112 +1,54 @@
 {
   "kind": "build_request",
-  "title": "Add multi-page sweet messages flow and a virtual box of chocolates gifting view",
-  "priority": "normal",
+  "title": "Retry production deployment and update public URL reference",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-9",
-      "text": "Convert the current single-page Chocolate Day experience into a simple multi-page (multi-step) flow within the frontend, with clear Next/Back navigation and a visible progress indicator, while keeping the existing Dairy Milk Fruit & Nut reveal interaction available in the flow.",
-      "target": "frontend",
+      "id": "REQ-25",
+      "text": "Retry deploying the current latest version of the Chocolate Day application to production via the platform deployment flow, and provide the updated public production URL once deployment succeeds.",
+      "target": "unknown",
       "source": {
         "messageIds": [
-          "msg-USER-1"
+          "msg-1"
         ],
         "quotes": [
-          "Add more message in the next few pages ..."
+          "Yes deploy again"
         ]
       },
       "acceptanceCriteria": [
-        "The experience contains multiple steps/pages (at least 3 total) presented as a guided flow.",
-        "Users can move forward/backward using clearly labeled buttons (e.g., “Next”, “Back”).",
-        "A progress indicator (e.g., Step 1 of N / dots) is visible and updates correctly.",
-        "The existing Dairy Milk Fruit & Nut card and message reveal modal still work and are reachable from within the flow.",
-        "Navigation and dialogs are keyboard accessible (Tab/Shift+Tab, Enter/Space), with visible focus states."
+        "A new production deployment attempt is executed for the latest code.",
+        "If deployment succeeds, a public production URL is produced and shared as the result of the deployment.",
+        "If deployment fails again, capture and surface the deployment error details so the failure cause is actionable."
       ]
     },
     {
-      "id": "REQ-10",
-      "text": "Add additional romantic/sweet message content across the subsequent pages that praises the recipient (e.g., how sweet he is), using English user-facing text and keeping the tone romantic and heartfelt.",
+      "id": "REQ-26",
+      "text": "After a successful deployment, update frontend/PRODUCTION_URL.txt to replace the placeholder URL and timestamp with the actual production URL and the time of update (English text only).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-USER-1"
+          "msg-1"
         ],
         "quotes": [
-          "Add more message in the next few pages like how sweet he his and all"
+          "Yes deploy again"
         ]
       },
       "acceptanceCriteria": [
-        "At least 2 additional pages/steps contain new romantic message content beyond the existing chocolate reveal message.",
-        "All added user-facing copy is in English and reads naturally.",
-        "The new pages visually match the existing romantic theme (rose/pink/amber palette) and remain readable in light/dark modes.",
-        "No copy implies multiple favorite chocolates; the favorite remains singular (Dairy Milk Fruit & Nut)."
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Add a “virtual chocolates” gifting experience as a dedicated page/step featuring a visually rich ‘box full of chocolates’ view (open box with assorted chocolates), including a small romantic note for him.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-USER-1"
-        ],
-        "quotes": [
-          "Also bring some virtual chocolates for him create one like the box full of chocolates"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A dedicated step/page exists that prominently shows a ‘box full of chocolates’ visual.",
-        "The box view includes a lightweight interaction (e.g., an “Open the box” / “Reveal chocolates” button or tap target) that reveals the chocolates and a short romantic note.",
-        "The interaction is accessible: can be triggered via keyboard; respects reduced-motion preferences where applicable (no mandatory heavy animation).",
-        "The gifting experience is decorative/virtual and does not introduce additional selectable chocolate options that conflict with the single-favorite-chocolate gallery."
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Integrate the required new static image assets for the virtual chocolate box experience under frontend/public/assets/generated and use them in the new gifting step/page (no backend image serving).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-USER-1"
-        ],
-        "quotes": [
-          "create one like the box full of chocolates"
-        ]
-      },
-      "acceptanceCriteria": [
-        "New images are added under frontend/public/assets/generated and referenced via /assets/generated/... paths.",
-        "The gifting step/page renders correctly with the new assets in both light and dark mode.",
-        "No backend code is added for image serving."
+        "frontend/PRODUCTION_URL.txt contains the real production URL (not the placeholder).",
+        "frontend/PRODUCTION_URL.txt contains a filled-in 'Last Updated' timestamp (not the placeholder)."
       ]
     }
   ],
   "constraints": [
-    "Keep the interactive chocolate selection limited to only “Dairy Milk Fruit & Nut”; do not add additional selectable chocolate options to the gallery.",
-    "Do not edit files under frontend/src/components/ui or any other paths listed as immutable in SYSTEM_CONTEXT.",
-    "Do not add additional backend services or external databases; keep changes in the existing React frontend unless a backend change is explicitly required (it is not for this request)."
+    "Do not modify any immutable frontend paths listed in SYSTEM_CONTEXT.frontend.immutablePaths.",
+    "Keep backend logic within the single Motoko actor (backend/main.mo); only add migration.mo if an upgrade requires state migration."
   ],
   "nonGoals": [
-    "Implementing payments, checkout, or real-world chocolate purchasing/shipping.",
-    "Adding third-party authentication providers (Internet Identity remains as-is).",
-    "Adding multiple chocolate choices to the interactive gallery (the ‘box full of chocolates’ is a virtual/visual gift element, not a multi-item selector).",
-    "Building real-time features (WebSockets, chat, notifications)."
+    "Do not add or change application features, UI, content, or styling beyond what is necessary to complete deployment and record the URL.",
+    "Do not introduce any new backend APIs or persistent state as part of this request."
   ],
   "imageRequirements": {
-    "required": [
-      "Illustration of an elegant closed gift box for chocolates, romantic color palette (chocolate-gift-box-closed.dim_1200x800.png)",
-      "Illustration/top-view of an open gift box filled with assorted chocolates (chocolate-gift-box-open.dim_1200x800.png)",
-      "Seamless pattern background of small hearts and cocoa elements, warm tones (chocolate-pattern-bg.dim_1600x900.png)"
-    ],
+    "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

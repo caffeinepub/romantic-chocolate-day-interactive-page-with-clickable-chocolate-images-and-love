@@ -1,13 +1,17 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
-  "summary": "Expand the experience from a single-page romantic Chocolate Day interaction to a multi-page flow with additional sweet/romantic messages and a virtual “box full of chocolates” gifting element.",
+  "projectStateVersion": 19,
+  "summary": "Expand the experience from a single-page romantic Chocolate Day interaction to a multi-page flow with additional sweet/romantic messages, a virtual “box full of chocolates” gifting element, and an added final page showing multiple chocolate pictures with short “meaning” love lines for each.",
   "architectural_notes": [
-    "Scope change: move from single-page experience to a multi-page flow to present additional messages and gifting content."
+    "Scope change: move from single-page experience to a multi-page flow to present additional messages and gifting content.",
+    "Scope update: add an extra final step/page that reintroduces multiple chocolate items (with image + meaning text) after the current last page.",
+    "Update the final “chocolate meanings” step content structure to support per-item copy placed before and/or after the chocolate image (e.g., ‘my only…’ line above, continuation below)."
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Illustration of an elegant closed gift box for chocolates, romantic color palette (chocolate-gift-box-closed.dim_1200x800.png)\n- Illustration/top-view of an open gift box filled with assorted chocolates (chocolate-gift-box-open.dim_1200x800.png)\n- Seamless pattern background of small hearts and cocoa elements, warm tones (chocolate-pattern-bg.dim_1600x900.png)",
+  "known_issues": [
+    "Potential scope conflict: existing request to restrict selection to only “Dairy Milk Fruit & Nut” vs new request to add multiple chocolates on a new final page.",
+    "Production deployment failed with a deployment error; user requested a redeploy/retry."
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-single-page-chocolate-day-experience-that-feels-unique-romantic-colorful-and-professionally-designed-centered-around-the-recipient-s-favorite-chocolate-dairy-milk-fruit-nut",
@@ -104,6 +108,118 @@
         "REQ-12"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-user-facing-closing-message-on-the-last-step-virtualchocolategiftstep-to-remove-the-phrase-my-sweet-friend-and-instead-address-the-recipient-as-the-user-s-boyfriend-partner-soulmate-optionally-also-acknowledging-he-is-her-closest-best-friend-using-english-text",
+      "title": "Update the user-facing closing message on the last step (VirtualChocolateGiftStep) to remove the phrase “my sweet friend” and instead address the recipient as the user’s boyfriend/partner/soulmate (optionally also acknowledging he is her closest/best friend) using English text.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-step-to-the-chocolate-day-multi-step-flow-that-visually-mimics-the-style-of-the-uploaded-instagram-screenshots-a-tall-story-like-shareable-card-with-a-bold-header-line-a-centered-faux-browser-laptop-frame-a-cute-stationery-paper-background-small-sticker-doodle-accents-and-a-prominent-message-centered-around-the-existing-favorite-chocolate-dairy-milk-fruit-nut",
+      "title": "Add a new step to the Chocolate Day multi-step flow that visually mimics the style of the uploaded Instagram screenshots: a tall, story-like “shareable card” with a bold header line, a centered faux browser/laptop frame, a cute stationery/paper background, small sticker/doodle accents, and a prominent message centered around the existing favorite chocolate “Dairy Milk Fruit & Nut”.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-step-flow-to-include-the-new-instagram-style-card-step-in-navigation-and-progress-increasing-the-total-step-count-accordingly-and-ensuring-back-next-controls-work-for-all-steps",
+      "title": "Update the step flow to include the new Instagram-style card step in navigation and progress, increasing the total step count accordingly and ensuring Back/Next controls work for all steps.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-new-instagram-style-card-step-as-a-dedicated-react-component-under-the-existing-steps-folder-and-ensure-it-uses-static-assets-for-its-background-frame-stickers-from-frontend-public-assets-generated-no-backend-image-serving",
+      "title": "Implement the new Instagram-style card step as a dedicated React component under the existing steps folder and ensure it uses static assets for its background/frame/stickers from frontend/public/assets/generated (no backend image serving).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-final-step-page-after-the-current-last-step-after-virtualchocolategiftstep-that-displays-multiple-chocolate-pictures-each-paired-with-a-short-romantic-meaning-message-using-english-user-facing-text",
+      "title": "Add a new final step page after the current last step (after VirtualChocolateGiftStep) that displays multiple chocolate pictures, each paired with a short romantic “meaning” message, using English user-facing text.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-multi-step-flow-to-include-the-new-final-step-in-step-rendering-progress-indicator-and-back-next-navigation-by-increasing-the-total-step-count-and-ensuring-navigation-works-across-all-steps",
+      "title": "Update the multi-step flow to include the new final step in step rendering, progress indicator, and Back/Next navigation by increasing the total step count and ensuring navigation works across all steps.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dedicated-react-step-component-under-frontend-src-components-chocolate-day-steps-for-the-new-chocolate-meanings-page-and-style-it-consistently-with-the-existing-romantic-theme-cards-grid-soft-shadows-rounded-corners-warm-rose-pink-amber-palette",
+      "title": "Create a dedicated React step component under frontend/src/components/chocolate-day/steps for the new “chocolate meanings” page and style it consistently with the existing romantic theme (cards/grid, soft shadows, rounded corners, warm rose/pink/amber palette).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-new-static-image-assets-for-the-chocolates-shown-on-the-new-final-step-under-frontend-public-assets-generated-and-reference-them-directly-from-the-new-step-no-backend-image-serving",
+      "title": "Add new static image assets for the chocolates shown on the new final step under frontend/public/assets/generated and reference them directly from the new step (no backend image serving).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-final-step-component-frontend-src-components-chocolate-day-steps-chocolatemeaningsstep-tsx-to-include-additional-chocolates-with-the-exact-user-requested-romantic-lines-and-the-specified-text-before-after-image-formatting-using-english-user-facing-text-add-these-new-chocolates-to-the-chocolate-meanings-content-centre-fresh-message-text-exactly-you-gave-freshness-in-my-life-dark-fantasy-show-my-only-dark-fantasy-first-then-the-dark-fantasy-image-then-show-it-will-be-with-you-forever-below-the-image-kinder-joy-show-my-love-for-you-is-unlimited-just-like-first-then-the-kinder-joy-image-then-show-surprises-below-the-image-dairy-milk-use-the-existing-dairy-milk-fruit-nut-image-render-the-sentence-as-a-text-image-text-line-you-re-the-image-that-makes-my-life-sweeter-milky-way-show-our-relationship-is-just-like-first-then-the-milky-way-image-then-add-a-short-romantic-continuation-line-in-english-below-the-image-that-completes-the-thought-keep-the-existing-chocolate-meanings-page-styling-consistent-with-the-current-romantic-theme-cards-grid-soft-shadows-rounded-corners-warm-rose-pink-amber-palette-and-ensure-the-layout-remains-responsive-and-readable-on-mobile",
+      "title": "Update the final step component (frontend/src/components/chocolate-day/steps/ChocolateMeaningsStep.tsx) to include additional chocolates with the exact user-requested romantic lines and the specified text-before/after-image formatting, using English user-facing text.\n\nAdd these new chocolates to the Chocolate Meanings content:\n- Centre Fresh: message text exactly \"You gave freshness in my life\"\n- Dark Fantasy: show \"My only dark fantasy\" first, then the Dark Fantasy image, then show \"It will be with you forever\" below the image\n- Kinder Joy: show \"My love for you is unlimited, just like\" first, then the Kinder Joy image, then show \"Surprises\" below the image\n- Dairy Milk (use the existing Dairy Milk Fruit & Nut image): render the sentence as a text–image–text line: \"You're the\" + [image] + \"that makes my life sweeter\"\n- Milky Way: show \"Our relationship is just like\" first, then the Milky Way image, then add a short romantic continuation line in English below the image that completes the thought\n\nKeep the existing Chocolate Meanings page styling consistent with the current romantic theme (cards/grid, soft shadows, rounded corners, warm rose/pink/amber palette), and ensure the layout remains responsive and readable on mobile.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-new-static-chocolate-images-for-the-newly-requested-chocolates-under-frontend-public-assets-generated-and-reference-them-from-chocolatemeaningsstep-no-backend-image-serving",
+      "title": "Add new static chocolate images for the newly requested chocolates under frontend/public/assets/generated and reference them from ChocolateMeaningsStep (no backend image serving).",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-few-more-chocolates-at-least-3-additional-items-beyond-those-explicitly-listed-by-the-user-to-the-chocolate-meanings-step-each-with-an-image-and-a-short-romantic-reason-i-love-you-line-in-english-keeping-the-same-visual-style-and-ensuring-the-page-remains-balanced-no-overcrowding",
+      "title": "Add a few more chocolates (at least 3 additional items beyond those explicitly listed by the user) to the Chocolate Meanings step, each with an image and a short romantic 'reason I love you' line in English, keeping the same visual style and ensuring the page remains balanced (no overcrowding).",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-publish-the-current-latest-version-of-the-chocolate-day-app-to-production-and-provide-the-user-with-the-updated-public-url-to-access-it",
+      "title": "Publish the current latest version of the Chocolate Day app to production and provide the user with the updated public URL to access it.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-retry-deploying-the-current-latest-version-of-the-chocolate-day-application-to-production-via-the-platform-deployment-flow-and-provide-the-updated-public-production-url-once-deployment-succeeds",
+      "title": "Retry deploying the current latest version of the Chocolate Day application to production via the platform deployment flow, and provide the updated public production URL once deployment succeeds.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-after-a-successful-deployment-update-frontend-production-url-txt-to-replace-the-placeholder-url-and-timestamp-with-the-actual-production-url-and-the-time-of-update-english-text-only",
+      "title": "After a successful deployment, update frontend/PRODUCTION_URL.txt to replace the placeholder URL and timestamp with the actual production URL and the time of update (English text only).",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -128,6 +244,24 @@
     {
       "id": "AR-4",
       "summary": "Add a virtual chocolates gifting experience, such as a “box full of chocolates” view/interaction for him.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Update last page copy to remove the phrase “my friend” and refer to the recipient as boyfriend/partner/soulmate (closest best friend, soulmate, partner, boyfriend, everything).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a new page after the current last step that displays multiple chocolate pictures (e.g., Choco Pie, KitKat, Fuse, Gems, 5 Star) each paired with a short romantic “meaning”/message line.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Expand the final “chocolate meanings” step to include additional chocolates (Centre Fresh, Dark Fantasy, Kinder Joy, Milky Way, plus Dairy Milk) with specific romantic reason/meaning lines in the requested text-before/after-image format.",
       "reqIds": [],
       "status": "pending"
     }

@@ -2,12 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-convert-the-current-single-page-chocolate-day-experience-into-a-simple-multi-page-multi-step-flow-within-the-frontend-with-clear-next-back-navigation-and-a-visible-progress-indicator-while-keeping-the-existing-dairy-milk-fruit-nut-reveal-interaction-available-in-the-flow",
-      "featureTitle": "Convert the current single-page Chocolate Day experience into a simple multi-page (multi-step) flow within the frontend, with clear Next/Back navigation and a visible progress indicator, while keeping the existing Dairy Milk Fruit & Nut reveal interaction available in the flow.",
+      "featureId": "feature-retry-deploying-the-current-latest-version-of-the-chocolate-day-application-to-production-via-the-platform-deployment-flow-and-provide-the-updated-public-production-url-once-deployment-succeeds",
+      "featureTitle": "Retry deploying the current latest version of the Chocolate Day application to production via the platform deployment flow, and provide the updated public production URL once deployment succeeds.",
       "files": [
-        "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
-        "frontend/src/components/chocolate-day/FlowNavigation.tsx",
-        "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx"
+        "frontend/DEPLOYMENT.md"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,17 +15,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-9"
+        "REQ-25"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-additional-romantic-sweet-message-content-across-the-subsequent-pages-that-praises-the-recipient-e-g-how-sweet-he-is-using-english-user-facing-text-and-keeping-the-tone-romantic-and-heartfelt",
-      "featureTitle": "Add additional romantic/sweet message content across the subsequent pages that praises the recipient (e.g., how sweet he is), using English user-facing text and keeping the tone romantic and heartfelt.",
+      "featureId": "feature-after-a-successful-deployment-update-frontend-production-url-txt-to-replace-the-placeholder-url-and-timestamp-with-the-actual-production-url-and-the-time-of-update-english-text-only",
+      "featureTitle": "After a successful deployment, update frontend/PRODUCTION_URL.txt to replace the placeholder URL and timestamp with the actual production URL and the time of update (English text only).",
       "files": [
-        "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
-        "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
-        "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx"
+        "frontend/PRODUCTION_URL.txt"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -37,44 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-virtual-chocolates-gifting-experience-as-a-dedicated-page-step-featuring-a-visually-rich-box-full-of-chocolates-view-open-box-with-assorted-chocolates-including-a-small-romantic-note-for-him",
-      "featureTitle": "Add a “virtual chocolates” gifting experience as a dedicated page/step featuring a visually rich ‘box full of chocolates’ view (open box with assorted chocolates), including a small romantic note for him.",
-      "files": [
-        "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
-        "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-integrate-the-required-new-static-image-assets-for-the-virtual-chocolate-box-experience-under-frontend-public-assets-generated-and-use-them-in-the-new-gifting-step-page-no-backend-image-serving",
-      "featureTitle": "Integrate the required new static image assets for the virtual chocolate box experience under frontend/public/assets/generated and use them in the new gifting step/page (no backend image serving).",
-      "files": [
-        "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
+        "REQ-26"
       ],
       "confidence": "high"
     }

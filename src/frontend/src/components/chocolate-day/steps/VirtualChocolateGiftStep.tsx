@@ -78,7 +78,7 @@ export default function VirtualChocolateGiftStep() {
               </p>
 
               <p className="text-lg md:text-xl text-rose-900 dark:text-rose-100 leading-relaxed text-center font-semibold">
-                Happy Chocolate Day, my sweet friend! You deserve all the sweetness in the world! 🌟💖🍫
+                Happy Chocolate Day to my boyfriend, my partner, my soulmate, my closest best friend, and my everything! You deserve all the sweetness in the world! 🌟💖🍫
               </p>
             </div>
           </div>

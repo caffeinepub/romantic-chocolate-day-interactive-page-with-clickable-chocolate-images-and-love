@@ -5,11 +5,13 @@ import FlowProgressIndicator from './FlowProgressIndicator';
 import FlowNavigation from './FlowNavigation';
 import SweetMessageStepOne from './steps/SweetMessageStepOne';
 import SweetMessageStepTwo from './steps/SweetMessageStepTwo';
+import InstagramStoryCardStep from './steps/InstagramStoryCardStep';
 import VirtualChocolateGiftStep from './steps/VirtualChocolateGiftStep';
+import ChocolateMeaningsStep from './steps/ChocolateMeaningsStep';
 import { type Chocolate } from './chocolateData';
 import { Heart } from 'lucide-react';
 
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 6;
 
 export default function ChocolateDayPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -60,7 +62,8 @@ export default function ChocolateDayPage() {
         <div className="max-w-4xl mx-auto">
           {currentStep === 1 && <SweetMessageStepOne />}
           {currentStep === 2 && <SweetMessageStepTwo />}
-          {currentStep === 3 && (
+          {currentStep === 3 && <InstagramStoryCardStep />}
+          {currentStep === 4 && (
             <div className="space-y-8">
               <div className="text-center space-y-3 mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-rose-900 dark:text-rose-100">
@@ -73,7 +76,8 @@ export default function ChocolateDayPage() {
               <ChocolateGallery onChocolateClick={setSelectedChocolate} />
             </div>
           )}
-          {currentStep === 4 && <VirtualChocolateGiftStep />}
+          {currentStep === 5 && <VirtualChocolateGiftStep />}
+          {currentStep === 6 && <ChocolateMeaningsStep />}
         </div>
       </main>
 

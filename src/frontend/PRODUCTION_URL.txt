@@ -1,0 +1,22 @@
+# Production URL for Chocolate Day Application
+
+This file contains the public production URL for the deployed application.
+
+URL: [To be updated after deployment]
+
+Last Updated: [Timestamp will be added after deployment]
+
+---
+
+Instructions:
+1. Copy the URL above after deployment completes
+2. Share it with your intended recipient
+3. The URL is publicly accessible and requires no authentication
+4. The application works on all modern browsers and devices
+
+Deployment Status: Awaiting successful deployment
+
+---
+
+Note: This file will be automatically updated by the deployment system
+once the production deployment completes successfully.
