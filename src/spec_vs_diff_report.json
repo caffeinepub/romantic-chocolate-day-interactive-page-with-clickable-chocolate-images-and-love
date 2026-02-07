@@ -1,0 +1,36 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T07:12:50.755Z",
+  "summary": "Implements a 4-step multi-page Chocolate Day flow with Back/Next navigation and a progress indicator, adds two new romantic message steps, and adds a virtual gift-box step with a reveal interaction and references to the requested generated image paths. However, the diff summary does not show the required static image assets being added under frontend/public/assets/generated, and reduced-motion handling for the gift reveal interaction is not evidenced.",
+  "missing_requirements": [
+    {
+      "id": "REQ-12",
+      "requirement": "Integrate the required new static image assets for the virtual chocolate box experience under frontend/public/assets/generated and use them in the new gifting step/page (no backend image serving).",
+      "reason": "The gifting step references the assets via /assets/generated/... paths, but the diff summary does not show any new image files added under frontend/public/assets/generated (only TSX components were added).",
+      "evidence": [
+        "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx (references /assets/generated/chocolate-gift-box-closed.dim_1200x800.png, /assets/generated/chocolate-gift-box-open.dim_1200x800.png, /assets/generated/chocolate-pattern-bg.dim_1600x900.png)"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "The virtual chocolates gifting step interaction respects reduced-motion preferences (no mandatory heavy animation).",
+      "reason": "The new gift step uses animation utility classes (e.g., animate-fade-in, animate-scale-in), but the diff summary does not show any prefers-reduced-motion conditional handling for this specific interaction; any such handling might exist elsewhere but is not evidenced here.",
+      "evidence": [
+        "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx (uses animate-fade-in / animate-scale-in)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+    "frontend/src/components/chocolate-day/FlowNavigation.tsx",
+    "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx",
+    "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
+    "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx",
+    "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+    "project_state.json"
+  ]
+}

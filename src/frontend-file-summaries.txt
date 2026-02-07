@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main app entry point that renders the ChocolateDayPage component as the single-page experience.",
+  "frontend/src/components/chocolate-day/chocolateData.ts": "Static data source defining a single chocolate (Dairy Milk Fruit & Nut) with its romantic message and generated image path.",
+  "frontend/src/components/chocolate-day/ChocolateDayPage.tsx": "Main page component with multi-step flow (4 steps total) featuring progress indicator, step-based navigation, sweet message steps, chocolate gallery, and virtual gift box, with preserved message reveal dialog functionality.",
+  "frontend/src/components/chocolate-day/ChocolateGallery.tsx": "Centered single-card gallery displaying the favorite chocolate with hover effects and reveal button, using responsive layout that centers on desktop and remains full-width on mobile.",
+  "frontend/src/components/chocolate-day/ChocolateMessageReveal.tsx": "Dialog component that displays the selected chocolate's image and romantic message with smooth animations.",
+  "frontend/src/components/chocolate-day/HeartsConfetti.tsx": "Decorative floating hearts animation overlay that respects prefers-reduced-motion accessibility preference.",
+  "frontend/src/index.css": "Global styles with romantic rose/berry/cream/gold OKLCH color palette, custom animations (float-up, scale-in, fade-in), and enhanced focus states for accessibility.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family and maintaining the romantic color system integration.",
+  "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx": "Progress indicator component displaying current step number and visual dots with accessible ARIA labels, styled to match the romantic rose/pink theme.",
+  "frontend/src/components/chocolate-day/FlowNavigation.tsx": "Reusable navigation control component with Back/Next buttons that disable appropriately at flow boundaries and support keyboard interaction.",
+  "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx": "First romantic message step praising his sweetness with heartfelt English copy, styled with rose/pink/amber theme and readable in both light/dark modes.",
+  "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx": "Second romantic message step highlighting how amazing he is with distinct heartfelt content, maintaining the singular favorite chocolate framing.",
+  "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx": "Virtual chocolate gift box step with accessible reveal interaction showing closed box initially, then open box with chocolates and romantic note, using static generated assets."
+}

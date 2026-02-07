@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Expand the experience from a single-page romantic Chocolate Day interaction to a multi-page flow with additional sweet/romantic messages and a virtual “box full of chocolates” gifting element.",
+  "architectural_notes": [
+    "Scope change: move from single-page experience to a multi-page flow to present additional messages and gifting content."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Illustration of an elegant closed gift box for chocolates, romantic color palette (chocolate-gift-box-closed.dim_1200x800.png)\n- Illustration/top-view of an open gift box filled with assorted chocolates (chocolate-gift-box-open.dim_1200x800.png)\n- Seamless pattern background of small hearts and cocoa elements, warm tones (chocolate-pattern-bg.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-chocolate-day-experience-that-feels-unique-romantic-colorful-and-professionally-designed-centered-around-the-recipient-s-favorite-chocolate-dairy-milk-fruit-nut",
+      "title": "Create a single-page Chocolate Day experience that feels unique, romantic, colorful, and professionally designed, centered around the recipient’s favorite chocolate: “Dairy Milk Fruit & Nut”.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clickable-chocolate-gallery-card-grid-layout-that-includes-at-minimum-one-item-labeled-dairy-milk-fruit-nut-plus-additional-chocolate-options-clicking-any-chocolate-image-reveals-a-romantic-text-message-for-that-specific-chocolate",
+      "title": "Add a clickable chocolate gallery (card/grid layout) that includes at minimum one item labeled “Dairy Milk Fruit & Nut” plus additional chocolate options; clicking any chocolate image reveals a romantic text message for that specific chocolate.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-romantic-reveal-interaction-that-feels-special-e-g-animated-modal-with-soft-transitions-confetti-hearts-accent-or-elegant-flip-card-reveal-while-keeping-the-ui-accessible-keyboard-operable-readable-contrast-focus-states",
+      "title": "Implement a romantic ‘reveal’ interaction that feels special (e.g., animated modal with soft transitions, confetti/hearts accent, or elegant flip-card reveal) while keeping the UI accessible (keyboard operable, readable contrast, focus states).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-cohesive-visual-theme-for-the-entire-page-colors-typography-spacing-background-treatment-aligned-to-a-romantic-colorful-aesthetic-avoid-blue-purple-dominant-palettes-and-apply-it-consistently-across-all-components",
+      "title": "Add a cohesive visual theme for the entire page (colors, typography, spacing, background treatment) aligned to a romantic, colorful aesthetic (avoid blue/purple-dominant palettes) and apply it consistently across all components.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-chocolate-gallery-no-backend-image-serving",
+      "title": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the chocolate gallery (no backend image serving).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-chocolate-gallery-data-to-include-only-one-chocolate-option-dairy-milk-fruit-nut-and-remove-the-other-chocolate-options-from-the-interactive-experience",
+      "title": "Update the chocolate gallery data to include only one chocolate option: “Dairy Milk Fruit & Nut”, and remove the other chocolate options from the interactive experience.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-user-facing-copy-in-the-page-and-gallery-to-reflect-that-there-is-only-one-favorite-chocolate-singular-phrasing-without-referencing-multiple-chocolates-or-a-collection",
+      "title": "Adjust user-facing copy in the page and gallery to reflect that there is only one favorite chocolate (singular phrasing), without referencing multiple chocolates or a “collection”.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-gallery-layout-so-the-single-chocolate-card-is-presented-in-a-visually-balanced-way-e-g-centered-on-larger-screens-rather-than-leaving-an-empty-multi-column-grid",
+      "title": "Update the gallery layout so the single chocolate card is presented in a visually balanced way (e.g., centered on larger screens) rather than leaving an empty multi-column grid.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-convert-the-current-single-page-chocolate-day-experience-into-a-simple-multi-page-multi-step-flow-within-the-frontend-with-clear-next-back-navigation-and-a-visible-progress-indicator-while-keeping-the-existing-dairy-milk-fruit-nut-reveal-interaction-available-in-the-flow",
+      "title": "Convert the current single-page Chocolate Day experience into a simple multi-page (multi-step) flow within the frontend, with clear Next/Back navigation and a visible progress indicator, while keeping the existing Dairy Milk Fruit & Nut reveal interaction available in the flow.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-additional-romantic-sweet-message-content-across-the-subsequent-pages-that-praises-the-recipient-e-g-how-sweet-he-is-using-english-user-facing-text-and-keeping-the-tone-romantic-and-heartfelt",
+      "title": "Add additional romantic/sweet message content across the subsequent pages that praises the recipient (e.g., how sweet he is), using English user-facing text and keeping the tone romantic and heartfelt.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-virtual-chocolates-gifting-experience-as-a-dedicated-page-step-featuring-a-visually-rich-box-full-of-chocolates-view-open-box-with-assorted-chocolates-including-a-small-romantic-note-for-him",
+      "title": "Add a “virtual chocolates” gifting experience as a dedicated page/step featuring a visually rich ‘box full of chocolates’ view (open box with assorted chocolates), including a small romantic note for him.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-the-required-new-static-image-assets-for-the-virtual-chocolate-box-experience-under-frontend-public-assets-generated-and-use-them-in-the-new-gifting-step-page-no-backend-image-serving",
+      "title": "Integrate the required new static image assets for the virtual chocolate box experience under frontend/public/assets/generated and use them in the new gifting step/page (no backend image serving).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a romantic Chocolate Day interactive page/app with colorful professional design, showing chocolate images (including Dairy Milk Fruit & Nut) that reveal text/messages when clicked.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Restrict the chocolate selection to only “Dairy Milk Fruit & Nut” (no additional chocolate options in the gallery).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add additional romantic/sweet messages across subsequent pages (multi-page flow) praising the recipient (e.g., how sweet he is).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add a virtual chocolates gifting experience, such as a “box full of chocolates” view/interaction for him.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Chocolate Day interactive page with clickable chocolate images and love notes",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

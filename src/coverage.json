@@ -1,0 +1,94 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T07:12:50.758Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Add additional romantic/sweet message content across the subsequent pages that praises the recipient (e.g., how sweet he is), using English user-facing text and keeping the tone romantic and heartfelt.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
+          "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx",
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
+          "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx",
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Add a “virtual chocolates” gifting experience as a dedicated page/step featuring a visually rich ‘box full of chocolates’ view (open box with assorted chocolates), including a small romantic note for him.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Integrate the required new static image assets for the virtual chocolate box experience under frontend/public/assets/generated and use them in the new gifting step/page (no backend image serving).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/chocolate-gift-box-closed.dim_1200x800.png",
+          "frontend/public/assets/generated/chocolate-gift-box-open.dim_1200x800.png",
+          "frontend/public/assets/generated/chocolate-pattern-bg.dim_1600x900.png",
+          "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/chocolate-gift-box-closed.dim_1200x800.png",
+          "frontend/public/assets/generated/chocolate-gift-box-open.dim_1200x800.png",
+          "frontend/public/assets/generated/chocolate-pattern-bg.dim_1600x900.png",
+          "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Convert the current single-page Chocolate Day experience into a simple multi-page (multi-step) flow within the frontend, with clear Next/Back navigation and a visible progress indicator, while keeping the existing Dairy Milk Fruit & Nut reveal interaction available in the flow.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+          "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx",
+          "frontend/src/components/chocolate-day/FlowNavigation.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+          "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx",
+          "frontend/src/components/chocolate-day/FlowNavigation.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/chocolate-gift-box-closed.dim_1200x800.png",
+    "frontend/public/assets/generated/chocolate-gift-box-open.dim_1200x800.png",
+    "frontend/public/assets/generated/chocolate-pattern-bg.dim_1600x900.png",
+    "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+    "frontend/src/components/chocolate-day/FlowNavigation.tsx",
+    "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx",
+    "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
+    "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx",
+    "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

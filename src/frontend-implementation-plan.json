@@ -1,0 +1,115 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Multi-step sweet messages flow with virtual chocolate gift box",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Convert the Chocolate Day experience into a multi-step guided flow with Next/Back navigation, progress indicator, and preserved Dairy Milk Fruit & Nut reveal dialog.",
+      "acceptanceCriteria": [
+        "The experience contains multiple steps/pages (at least 3 total) presented as a guided flow.",
+        "Users can move forward/backward using clearly labeled buttons (e.g., “Next”, “Back”).",
+        "A progress indicator (e.g., Step 1 of N / dots) is visible and updates correctly.",
+        "The existing Dairy Milk Fruit & Nut card and message reveal modal still work and are reachable from within the flow.",
+        "Navigation and dialogs are keyboard accessible (Tab/Shift+Tab, Enter/Space), with visible focus states."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+          "operation": "modify",
+          "description": "Refactor the current single-page layout into a multi-step flow driven by local step state (at least 3 steps), including clear Next/Back controls and a visible progress indicator. Keep ChocolateGallery and ChocolateMessageReveal integrated as a reachable step so the Dairy Milk Fruit & Nut reveal interaction remains available. Use shadcn-ui Button for navigation actions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/FlowProgressIndicator.tsx",
+          "operation": "create",
+          "description": "Add a lightweight progress indicator component (e.g., Step X of N and/or dots) with accessible labeling (aria-current for the active step) and styling that matches the romantic theme in light/dark modes. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/FlowNavigation.tsx",
+          "operation": "create",
+          "description": "Create a reusable navigation control component that renders Back/Next buttons, correctly disables them at the ends of the flow, and supports keyboard activation. Use shadcn-ui Button for consistent styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add new romantic English message content across at least two additional steps, matching the existing romantic theme and keeping the favorite chocolate singular.",
+      "acceptanceCriteria": [
+        "At least 2 additional pages/steps contain new romantic message content beyond the existing chocolate reveal message.",
+        "All added user-facing copy is in English and reads naturally.",
+        "The new pages visually match the existing romantic theme (rose/pink/amber palette) and remain readable in light/dark modes.",
+        "No copy implies multiple favorite chocolates; the favorite remains singular (Dairy Milk Fruit & Nut)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chocolate-day/steps/SweetMessageStepOne.tsx",
+          "operation": "create",
+          "description": "Add a dedicated step component containing new romantic, heartfelt English copy praising him (no mention of multiple favorite chocolates), styled to match the existing rose/pink/amber theme and readable in dark mode. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/steps/SweetMessageStepTwo.tsx",
+          "operation": "create",
+          "description": "Add a second dedicated step component with additional romantic English copy (distinct from the reveal message), maintaining the singular favorite chocolate framing and ensuring good contrast in both light/dark modes. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+          "operation": "modify",
+          "description": "Wire the new sweet message step components into the multi-step flow order and ensure they participate in Next/Back navigation and progress indicator counts. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add a dedicated virtual chocolates gifting step featuring a rich box-of-chocolates visual with an accessible open/reveal interaction and a short romantic note.",
+      "acceptanceCriteria": [
+        "A dedicated step/page exists that prominently shows a ‘box full of chocolates’ visual.",
+        "The box view includes a lightweight interaction (e.g., an “Open the box” / “Reveal chocolates” button or tap target) that reveals the chocolates and a short romantic note.",
+        "The interaction is accessible: can be triggered via keyboard; respects reduced-motion preferences where applicable (no mandatory heavy animation).",
+        "The gifting experience is decorative/virtual and does not introduce additional selectable chocolate options that conflict with the single-favorite-chocolate gallery."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+          "operation": "create",
+          "description": "Implement the virtual gifting step that shows a closed gift box initially and reveals the open box filled with chocolates plus a short romantic note after an accessible user action (button). Keep the chocolates decorative (no selectable options). Use shadcn-ui Button for the reveal interaction; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/ChocolateDayPage.tsx",
+          "operation": "modify",
+          "description": "Insert the virtual chocolate gift step into the flow and ensure it updates the progress indicator and works with Next/Back navigation. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add and wire the required generated static image assets for the virtual chocolate box step under frontend/public/assets/generated (frontend-only).",
+      "acceptanceCriteria": [
+        "New images are added under frontend/public/assets/generated and referenced via /assets/generated/... paths.",
+        "The gifting step/page renders correctly with the new assets in both light and dark mode.",
+        "No backend code is added for image serving."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/chocolate-gift-box-closed.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the required generated image asset for the closed gift box state used by the virtual gifting step."
+        },
+        {
+          "path": "frontend/public/assets/generated/chocolate-gift-box-open.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the required generated image asset for the open gift box filled with assorted chocolates used by the virtual gifting step."
+        },
+        {
+          "path": "frontend/public/assets/generated/chocolate-pattern-bg.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the required generated seamless pattern background asset used decoratively within the virtual gifting step."
+        },
+        {
+          "path": "frontend/src/components/chocolate-day/steps/VirtualChocolateGiftStep.tsx",
+          "operation": "modify",
+          "description": "Reference and render the new static assets from frontend/public via their paths: /assets/generated/chocolate-gift-box-closed.dim_1200x800.png, /assets/generated/chocolate-gift-box-open.dim_1200x800.png, and /assets/generated/chocolate-pattern-bg.dim_1600x900.png. Ensure the layout remains readable in light/dark modes and the assets are purely static (no backend involvement). Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}
